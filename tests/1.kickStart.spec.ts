@@ -1,4 +1,4 @@
-import {chromium, test} from '@playwright/test';
+import {test} from '@playwright/test';
 
 test('Kick start with Playwright', async ({page})=> {
     
