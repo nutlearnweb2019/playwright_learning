@@ -14,7 +14,7 @@ test('Practice of locator method', async ({page}) => {
     await page.locator("data-test=add-to-cart-sauce-labs-backpack").click();
 });
 
-test('Practice oo locator method with options', async ({page}) => {
+test('Practice of locator method with options', async ({page}) => {
     await page.goto('https://www.saucedemo.com/');
     await page.locator('.form_group', {has: page.locator('input#user-name')}).click();
     await page.locator('.form_group', {has: page.locator('input#user-name')}).pressSequentially('standard_user');
@@ -26,4 +26,23 @@ test('Practice oo locator method with options', async ({page}) => {
 
     await page.locator('//a', {hasText: 'Sauce Labs Backpack'}).click();
     await page.locator('.inventory_item_name', {hasNotText: /Sauce.*/}).click();
+});
+
+test('Practice of getBy methods', async ({page}) => {
+    // await page.goto('https://demo.nopcommerce.com/login?returnUrl=%2F');
+    // await page.getByLabel('Email:', {exact: true}).fill('testcodeautomate@gmail.com');
+
+    // console.log(await page.getByText('New Customer', {exact: true}).textContent());
+
+    // await page.getByAltText('nopCommerce demo store').click();
+
+    // await page.getByTitle('Show products in category Electronics').first().click();
+
+    // await page.getByPlaceholder('Search store').fill('Mobile');
+
+    // await page.getByRole('button', { name: 'Search' }).click();
+
+    await page.goto('https://www.saucedemo.com/');
+    await page.getByTestId('username').fill('standard_user');
+
 });
